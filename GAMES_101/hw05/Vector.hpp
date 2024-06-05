@@ -6,21 +6,9 @@
 class Vector3f
 {
 public:
-    Vector3f()
-        : x(0)
-        , y(0)
-        , z(0)
-    {}
-    Vector3f(float xx)
-        : x(xx)
-        , y(xx)
-        , z(xx)
-    {}
-    Vector3f(float xx, float yy, float zz)
-        : x(xx)
-        , y(yy)
-        , z(zz)
-    {}
+    Vector3f() : x(0), y(0), z(0) {}
+    Vector3f(float xx) : x(xx), y(xx), z(xx) {}
+    Vector3f(float xx, float yy, float zz) : x(xx), y(yy), z(zz) {}
     Vector3f operator*(const float& r) const
     {
         return Vector3f(x * r, y * r, z * r);
@@ -42,10 +30,7 @@ public:
     {
         return Vector3f(x + v.x, y + v.y, z + v.z);
     }
-    Vector3f operator-() const
-    {
-        return Vector3f(-x, -y, -z);
-    }
+    Vector3f operator-() const { return Vector3f(-x, -y, -z); }
     Vector3f& operator+=(const Vector3f& v)
     {
         x += v.x, y += v.y, z += v.z;
@@ -65,22 +50,10 @@ public:
 class Vector2f
 {
 public:
-    Vector2f()
-        : x(0)
-        , y(0)
-    {}
-    Vector2f(float xx)
-        : x(xx)
-        , y(xx)
-    {}
-    Vector2f(float xx, float yy)
-        : x(xx)
-        , y(yy)
-    {}
-    Vector2f operator*(const float& r) const
-    {
-        return Vector2f(x * r, y * r);
-    }
+    Vector2f() : x(0), y(0) {}
+    Vector2f(float xx) : x(xx), y(xx) {}
+    Vector2f(float xx, float yy) : x(xx), y(yy) {}
+    Vector2f operator*(const float& r) const { return Vector2f(x * r, y * r); }
     Vector2f operator+(const Vector2f& v) const
     {
         return Vector2f(x + v.x, y + v.y);
@@ -96,8 +69,7 @@ inline Vector3f lerp(const Vector3f& a, const Vector3f& b, const float& t)
 inline Vector3f normalize(const Vector3f& v)
 {
     float mag2 = v.x * v.x + v.y * v.y + v.z * v.z;
-    if (mag2 > 0)
-    {
+    if (mag2 > 0) {
         float invMag = 1 / sqrtf(mag2);
         return Vector3f(v.x * invMag, v.y * invMag, v.z * invMag);
     }
@@ -112,5 +84,6 @@ inline float dotProduct(const Vector3f& a, const Vector3f& b)
 
 inline Vector3f crossProduct(const Vector3f& a, const Vector3f& b)
 {
-    return Vector3f(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
+    return Vector3f(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z,
+                    a.x * b.y - a.y * b.x);
 }
