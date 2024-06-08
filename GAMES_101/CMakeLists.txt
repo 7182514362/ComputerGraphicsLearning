@@ -3,7 +3,7 @@ project(Homework)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
@@ -19,3 +19,5 @@ add_subdirectory(hw01)
 add_subdirectory(hw02)
 add_subdirectory(hw03)
 add_subdirectory(hw04)
+add_subdirectory(hw05)
+add_subdirectory(hw06)
