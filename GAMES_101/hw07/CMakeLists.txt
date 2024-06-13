@@ -1,5 +1,5 @@
 add_executable(
-  RayTracing2
+  RayTracing3
   main.cpp
   Object.hpp
   Vector.cpp
@@ -19,3 +19,7 @@ add_executable(
   Intersection.hpp
   Renderer.cpp
   Renderer.hpp)
+
+
+# set(CMAKE_BUILD_TYPE Debug)
+target_compile_options(RayTracing3 PUBLIC "-O3")

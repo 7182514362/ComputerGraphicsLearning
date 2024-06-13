@@ -5,6 +5,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 
 set(CMAKE_CXX_STANDARD 20)
 
+# set(CMAKE_BUILD_TYPE Debug)
+
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 message(STATUS "OpenCV_INCLUDE_DIRS: ${OpenCV_INCLUDE_DIRS}")
@@ -21,3 +23,4 @@ add_subdirectory(hw03)
 add_subdirectory(hw04)
 add_subdirectory(hw05)
 add_subdirectory(hw06)
+add_subdirectory(hw07)
